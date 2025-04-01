@@ -1,0 +1,43 @@
+# Project: Project2
+# Makefile created by Dev-C++ 5.6.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o House.o Bird.o Clock.o SinglePendulum.o Utils.o
+LINKOBJ  = main.o House.o Bird.o Clock.o SinglePendulum.o Utils.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/lib" -static-libstdc++ -static-libgcc "../Program Files (x86)/Dev-Cpp/MinGW32/lib/libopengl32.a" "../Program Files (x86)/Dev-Cpp/MinGW32/lib/libglut32.a" "../Program Files (x86)/Dev-Cpp/MinGW32/lib/libglu32.a"
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include/c++"
+BIN      = Project_cuoi_ki.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+House.o: House.cpp
+	$(CPP) -c House.cpp -o House.o $(CXXFLAGS)
+
+Bird.o: Bird.cpp
+	$(CPP) -c Bird.cpp -o Bird.o $(CXXFLAGS)
+
+Clock.o: Clock.cpp
+	$(CPP) -c Clock.cpp -o Clock.o $(CXXFLAGS)
+
+SinglePendulum.o: SinglePendulum.cpp
+	$(CPP) -c SinglePendulum.cpp -o SinglePendulum.o $(CXXFLAGS)
+
+Utils.o: Utils.cpp
+	$(CPP) -c Utils.cpp -o Utils.o $(CXXFLAGS)
