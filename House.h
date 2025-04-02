@@ -1,5 +1,6 @@
 #include <GL/glut.h>
 #include <iostream>
+#include <string>
 #include "Utils.h"
 
 #ifndef HOUSE_H
@@ -13,6 +14,7 @@ class House
         void drawHouse();
         void drawRoof();        
     private:
+        string nameHouse;
 };
 
 

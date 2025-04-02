@@ -55,7 +55,8 @@ int main(int argc, char** argv)
 	glutCreateWindow("Project");
 	printf("%d, %d, %d, %d\n", WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_POSITION_X, WINDOW_POSITION_Y);
   
-	glEnable(GL_DEPTH_TEST); 
+	glEnable(GL_DEPTH_TEST);
+	cout << "hello world" << endl;
   
 	glutDisplayFunc(display);
 	glutKeyboardFunc(keyboardFunc);
