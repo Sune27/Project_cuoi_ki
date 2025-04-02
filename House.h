@@ -14,6 +14,7 @@ class House
         void drawHouse();
         void drawRoof();        
     private:
+        string nameHouse;
 };
 
 
